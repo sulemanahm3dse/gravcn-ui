@@ -111,6 +111,13 @@ const ChartTooltipContent = React.forwardRef<
       indicator?: "line" | "dot" | "dashed"
       nameKey?: string
       labelKey?: string
+      payload?: any[]
+      active?: boolean
+      label?: any
+      labelFormatter?: (label: any, payload: any[]) => React.ReactNode
+      labelClassName?: string
+      formatter?: (value: any, name: any, item: any, index: number, payload: any) => React.ReactNode
+      color?: string
     }
 >(
   (
@@ -211,13 +218,10 @@ const ChartTooltipContent = React.forwardRef<
                           <div
                             className={cn(
                               "shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]",
-                              {
-                                "h-2.5 w-2.5": indicator === "dot",
-                                "w-1": indicator === "line",
-                                "w-0 border-[1.5px] border-dashed bg-transparent":
-                                  indicator === "dashed",
-                                "my-0.5": nestLabel && indicator === "dashed",
-                              }
+                              indicator === "dot" && "h-2.5 w-2.5",
+                              indicator === "line" && "w-1",
+                              indicator === "dashed" && "w-0 border-[1.5px] border-dashed bg-transparent",
+                              nestLabel && indicator === "dashed" && "my-0.5"
                             )}
                             style={
                               {
@@ -264,7 +268,7 @@ const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
     Pick<RechartsPrimitive.LegendProps, "verticalAlign"> & {
-      payload?: RechartsPrimitive.LegendProps["payload"]
+      payload?: any[]
       hideIcon?: boolean
       nameKey?: string
     }
