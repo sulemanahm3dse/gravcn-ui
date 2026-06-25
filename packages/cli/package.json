@@ -1,5 +1,5 @@
 {
-  "name": "@ui-library/cli",
+  "name": "gravcn-ui-cli",
   "version": "0.1.0",
   "type": "module",
   "bin": {
