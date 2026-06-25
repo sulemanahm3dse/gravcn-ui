@@ -1,0 +1,90 @@
+---
+title: Components
+description: Here you can find all the components available in the library. We are working on adding more components.
+---
+
+Explore our library of premium enhanced components and standard primitives. All components can be installed directly using our CLI.
+
+---
+
+## 🧱 Premium Extensions
+
+These are composite, high-value components that combine multiple primitive elements with state management and layouts:
+
+<Cards>
+  <Card title="App Shell" href="/docs/components/app-shell" description="Collapsible sidebar, responsive header, SaaS dashboard wrapper" />
+  <Card title="Data Table" href="/docs/components/data-table" description="Tanstack Table wrapper with built-in search, pagination, and columns toggle" />
+  <Card title="Multi Select" href="/docs/components/multi-select" description="Removable tag badges, command-palette style search popover" />
+</Cards>
+
+---
+
+## 📦 Core Components & Primitives
+
+Standard accessible primitives powered by Radix UI, installable directly via the CLI:
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
+  {[
+    { name: "Accordion", href: "/docs/components/accordion" },
+    { name: "Alert", href: "/docs/components/alert" },
+    { name: "Alert Dialog", href: "/docs/components/alert-dialog" },
+    { name: "Aspect Ratio", href: "#" },
+    { name: "Avatar", href: "/docs/components/avatar" },
+    { name: "Badge", href: "/docs/components/badge" },
+    { name: "Breadcrumb", href: "#" },
+    { name: "Button", href: "/docs/components/button" },
+    { name: "Button Group", href: "#" },
+    { name: "Calendar", href: "#" },
+    { name: "Card", href: "/docs/components/card" },
+    { name: "Carousel", href: "#" },
+    { name: "Chart", href: "/docs/components/chart" },
+    { name: "Checkbox", href: "/docs/components/checkbox" },
+    { name: "Collapsible", href: "#" },
+    { name: "Combobox", href: "#" },
+    { name: "Command", href: "#" },
+    { name: "Context Menu", href: "#" },
+    { name: "Date Picker", href: "#" },
+    { name: "Dialog", href: "/docs/components/dialog" },
+    { name: "Drawer", href: "#" },
+    { name: "Dropdown Menu", href: "/docs/components/dropdown-menu" },
+    { name: "Hover Card", href: "#" },
+    { name: "Input", href: "/docs/components/input" },
+    { name: "Input OTP", href: "#" },
+    { name: "Label", href: "#" },
+    { name: "Menubar", href: "#" },
+    { name: "Navigation Menu", href: "#" },
+    { name: "Pagination", href: "#" },
+    { name: "Popover", href: "/docs/components/popover" },
+    { name: "Progress", href: "#" },
+    { name: "Radio Group", href: "#" },
+    { name: "Resizable", href: "#" },
+    { name: "Scroll Area", href: "#" },
+    { name: "Select", href: "#" },
+    { name: "Separator", href: "#" },
+    { name: "Sheet", href: "/docs/components/sheet" },
+    { name: "Sidebar", href: "#" },
+    { name: "Skeleton", href: "/docs/components/skeleton" },
+    { name: "Slider", href: "#" },
+    { name: "Sonner", href: "#" },
+    { name: "Switch", href: "/docs/components/switch" },
+    { name: "Table", href: "/docs/components/table" },
+    { name: "Tabs", href: "/docs/components/tabs" },
+    { name: "Textarea", href: "/docs/components/textarea" },
+    { name: "Toast", href: "#" },
+    { name: "Tooltip", href: "/docs/components/tooltip" },
+  ].map((item, idx) => (
+    <a
+      key={idx}
+      href={item.href}
+      className="flex items-center justify-between p-3 rounded-xl border border-border bg-card/50 hover:bg-muted/50 hover:border-foreground/30 transition-all font-medium text-sm text-foreground no-underline"
+    >
+      <span>{item.name}</span>
+      <span className="text-xs text-muted-foreground">→</span>
+    </a>
+  ))}
+</div>
+
+---
+
+> [!TIP]
+> Can't find what you need? All standard primitives can be fetched and remapped dynamically using our CLI because of the native Shadcn fallback mechanism.

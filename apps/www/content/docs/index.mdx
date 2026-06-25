@@ -1,0 +1,91 @@
+---
+title: Introduction & CLI
+description: Getting started with the gravcn/ui CLI
+---
+
+Welcome to **gravcn/ui**. This library is a curated set of premium composite components and page-level layouts designed to build on top of Shadcn/ui's raw primitives.
+
+Instead of writing complex compound state management and page structures from scratch, you can drop these premium blocks directly into your codebase.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Initialize the CLI
+Run the `init` command in the root of your React project to set up your import aliases and configurations:
+
+```bash
+npx @gravcn/cli init
+```
+
+The CLI will prompt you with the following questions:
+*   **TypeScript**: Are you using TypeScript? (Recommended: Yes)
+*   **Components Alias**: Where do you want your custom components to live? (Default: `@/components`)
+*   **Utils Alias**: Where does your helper/utility file live? (Default: `@/lib/utils`)
+
+This creates or updates a `components.json` file in your project.
+
+### 2. Add Components
+To copy a component into your project, run the `add` command:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add <component-name>
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add <component-name>
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add <component-name>
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add <component-name>
+    ```
+  </Tab>
+</Tabs>
+
+For example:
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add data-table
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add data-table
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add data-table
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add data-table
+    ```
+  </Tab>
+</Tabs>
+
+The CLI will:
+1.  Verify your configuration.
+2.  Fetch the component source code and resolve all registry dependencies recursively.
+3.  Automatically detect your package manager (`npm`, `pnpm`, `yarn`, or `bun`) and install any required npm packages (e.g. `@tanstack/react-table`).
+4.  Rewrite all import aliases in the files to match your project preferences.
+5.  Write the files directly into your project's components folder.
+
+---
+
+## 🧱 Native Shadcn/ui Fallback
+
+The CLI comes with a built-in fallback system. If you request a standard Shadcn/ui primitive component (like `button`, `input`, or `table`) that is not part of our extension library, the CLI automatically fetches and installs it directly from the official **Shadcn/ui Registry**.
+
+This means you only need to use **one CLI tool** to manage both your core shadcn primitives and your premium composite extension layouts!

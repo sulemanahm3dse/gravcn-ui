@@ -1,0 +1,52 @@
+---
+title: Textarea
+description: Renders a multiline text input styled to match the theme.
+---
+
+A multiline textarea element that supports resizing and focus states.
+
+<ComponentPreview name="textarea" />
+
+---
+
+## Installation
+
+To add the `Textarea` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add textarea
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add textarea
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add textarea
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add textarea
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+
+## Usage Example
+
+Here is how you can render the `Textarea` component:
+
+```tsx title="demo/Textarea.tsx"
+import { Textarea } from "@/components/ui/textarea";
+
+export function TextareaDemo() {
+  return <Textarea placeholder="Type your message here..." />;
+}
+```

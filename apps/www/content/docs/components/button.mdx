@@ -1,0 +1,70 @@
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+---
+
+The core `Button` component is the standard primitive for user trigger events. It supports loading indicators, icon alignments, and variant states.
+
+<ComponentPreview name="button" />
+
+---
+
+## Installation
+
+Install it directly into your workspace:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add button
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add button
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add button
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add button
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+
+## Usage Example
+
+```tsx title="demo/Button.tsx"
+import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
+
+export default function ButtonDemo() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="default">Primary</Button>
+      <Button variant="outline">Outline</Button>
+      <Button disabled>
+        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+        Please wait
+      </Button>
+    </div>
+  );
+}
+```
+
+---
+
+## ⚙️ Properties (API)
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | Visual style preset. |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | Sizing options. |
+| `asChild` | `boolean` | `false` | Change render element to match child primitive using Slot. |

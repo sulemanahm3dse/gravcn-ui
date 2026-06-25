@@ -1,0 +1,108 @@
+---
+title: App Shell
+description: A premium responsive layout wrapper featuring a collapsible sidebar and top header.
+---
+
+The `AppShell` component provides a standard modern dashboard layout shell with a collapsible desktop sidebar, responsive mobile sidebar overlay drawer, search controls, notifications, and user avatar dropdown menu.
+
+<ComponentPreview name="app-shell" />
+
+---
+
+## Installation
+
+To add the `AppShell` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add app-shell
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add app-shell
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add app-shell
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add app-shell
+    ```
+  </Tab>
+</Tabs>
+
+
+This will automatically pull in the following official Shadcn primitives as dependencies:
+*   `button`
+*   `avatar`
+*   `dropdown-menu`
+
+---
+
+## Usage Example
+
+Here is how you can set up a full layouts page using the `AppShell`:
+
+```tsx title="demo/AppShell.tsx"
+import { AppShell, NavItem } from "@/components/app-shell/app-shell";
+import { LayoutDashboard, Users, Settings, LogOut, Code } from "lucide-react";
+import * as React from "react";
+
+export default function Layout() {
+  const [navItems, setNavItems] = React.useState<NavItem[]>([
+    { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard, active: true },
+    { title: "Team", href: "/team", icon: Users, active: false },
+    { title: "Settings", href: "/settings", icon: Settings, active: false },
+  ]);
+
+  const handleNavClick = (clickedItem: NavItem) => {
+    setNavItems(
+      navItems.map((item) => ({
+        ...item,
+        active: item.title === clickedItem.title,
+      }))
+    );
+  };
+
+  const brand = {
+    name: "DevSuite",
+    logo: <Code className="h-5 w-5" />,
+  };
+
+  const user = {
+    name: "John Doe",
+    email: "john@example.com",
+  };
+
+  return (
+    <AppShell
+      navItems={navItems}
+      brand={brand}
+      user={user}
+      onNavItemClick={handleNavClick}
+    >
+      <div className="space-y-4">
+        <h1 className="text-2xl font-bold">Dashboard</h1>
+        <p className="text-muted-foreground">Welcome back, John! Here is your workspace.</p>
+      </div>
+    </AppShell>
+  );
+}
+```
+
+---
+
+## ⚙️ Properties (API)
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `navItems` | `NavItem[]` | *Required* | Navigation link items containing `title`, `href`, `icon`, and optional `active` flag. |
+| `brand` | `{ name: string; logo: ReactNode }` | *Required* | Branding logo element and display name string. |
+| `user` | `{ name: string; email: string; avatarUrl?: string }` | `undefined` | User profile information for rendering the avatar and dropdown. |
+| `onNavItemClick` | `(item: NavItem) => void` | `undefined` | Callback triggered when a sidebar item button is clicked. |
+| `children` | `ReactNode` | *Required* | Workspace layout slot rendered inside the main scroll container. |

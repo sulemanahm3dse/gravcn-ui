@@ -1,0 +1,110 @@
+---
+title: Data Table
+description: A fully featured data table with pagination, sorting, and visibility controls.
+---
+
+The `DataTable` component combines `@tanstack/react-table` with shadcn dropdowns, buttons, and inputs to create a robust data grid.
+
+<ComponentPreview name="data-table" />
+
+---
+
+## Installation
+
+To add the `DataTable` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add data-table
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add data-table
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add data-table
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add data-table
+    ```
+  </Tab>
+</Tabs>
+
+
+This will automatically pull in the following official Shadcn primitives as dependencies if they are not already installed:
+*   `table`
+*   `dropdown-menu`
+*   `button`
+*   `input`
+
+And install the following npm dependencies:
+*   `@tanstack/react-table`
+*   `lucide-react`
+
+---
+
+## Usage Example
+
+Here is a full example showing how to declare columns and pass data to the component:
+
+```tsx title="demo/DataTable.tsx"
+import { DataTable } from "@/components/data-table/data-table";
+import { ColumnDef } from "@tanstack/react-table";
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+}
+
+const columns: ColumnDef<User>[] = [
+  {
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
+    accessorKey: "role",
+    header: "Role",
+  },
+];
+
+const data: User[] = [
+  { id: "1", name: "Alice", email: "alice@example.com", role: "Admin" },
+  { id: "2", name: "Bob", email: "bob@example.com", role: "User" },
+];
+
+export default function UserTablePage() {
+  return (
+    <div className="container py-10">
+      <DataTable 
+        columns={columns} 
+        data={data} 
+        searchKey="name" 
+        searchPlaceholder="Filter by name..." 
+      />
+    </div>
+  );
+}
+```
+
+---
+
+## ⚙️ Properties (API)
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `columns` | `ColumnDef<TData, TValue>[]` | *Required* | Column configuration defined using `@tanstack/react-table`. |
+| `data` | `TData[]` | *Required* | The array of data objects to render. |
+| `searchKey` | `string` | `undefined` | The column accessor key to run global search filtering against. |
+| `searchPlaceholder` | `string` | `"Filter..."` | The placeholder text for the search filter input. |

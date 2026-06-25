@@ -1,0 +1,11 @@
+{
+  "name": "ui-library-monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter www dev",
+    "build": "pnpm --filter registry build && pnpm --filter cli build && pnpm --filter www build"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

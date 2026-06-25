@@ -1,0 +1,83 @@
+---
+title: Dropdown Menu
+description: Displays a menu to the user — triggered by a button — offering a list of choices.
+---
+
+A highly styled dropdown menu with support for icons, separators, labels, and customizable states.
+
+<ComponentPreview name="dropdown-menu" />
+
+---
+
+## Installation
+
+To add the `DropdownMenu` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add dropdown-menu
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add dropdown-menu
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add dropdown-menu
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add dropdown-menu
+    ```
+  </Tab>
+</Tabs>
+
+
+This will automatically pull in the following official Shadcn primitives as dependencies:
+*   `button`
+*   `dropdown-menu`
+
+---
+
+## Usage Example
+
+Here is how you can render the `DropdownMenu` component:
+
+```tsx title="demo/DropdownMenu.tsx"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { User, Settings } from "lucide-react";
+
+export function DropdownMenuDemo() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline">Open Menu</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <User className="mr-2 h-4 w-4" />
+          <span>Profile</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Settings className="mr-2 h-4 w-4" />
+          <span>Settings</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```

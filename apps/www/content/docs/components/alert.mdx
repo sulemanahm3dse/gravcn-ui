@@ -1,0 +1,57 @@
+---
+title: Alert
+description: Displays a callout message for user attention.
+---
+
+Standard styled callouts with icon support and variance styling.
+
+<ComponentPreview name="alert" />
+
+---
+
+## Installation
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add alert
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add alert
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add alert
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add alert
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+
+## Usage Example
+
+```tsx title="demo/Alert.tsx"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { AlertCircle } from "lucide-react";
+
+export default function AlertDemo() {
+  return (
+    <Alert variant="destructive">
+      <AlertCircle className="h-4 w-4" />
+      <AlertTitle>Error</AlertTitle>
+      <AlertDescription>
+        Your session has expired. Please log in again.
+      </AlertDescription>
+    </Alert>
+  );
+}
+```

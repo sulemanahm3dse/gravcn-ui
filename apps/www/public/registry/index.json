@@ -1,0 +1,40 @@
+[
+  {
+    "name": "data-table",
+    "dependencies": [
+      "@tanstack/react-table",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "table",
+      "dropdown-menu",
+      "button",
+      "input"
+    ]
+  },
+  {
+    "name": "multi-select",
+    "dependencies": [
+      "lucide-react",
+      "@radix-ui/react-popover",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "badge",
+      "command",
+      "popover",
+      "button"
+    ]
+  },
+  {
+    "name": "app-shell",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "avatar",
+      "dropdown-menu"
+    ]
+  }
+]

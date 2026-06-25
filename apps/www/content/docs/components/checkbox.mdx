@@ -1,0 +1,62 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and unchecked options.
+---
+
+A checkbox primitive that incorporates full keyboard navigation and support for accessible state attributes.
+
+<ComponentPreview name="checkbox" />
+
+---
+
+## Installation
+
+To add the `Checkbox` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add checkbox
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add checkbox
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add checkbox
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add checkbox
+    ```
+  </Tab>
+</Tabs>
+
+
+This will automatically pull in the following official Shadcn primitives as dependencies:
+*   `checkbox`
+
+---
+
+## Usage Example
+
+Here is how you can render the `Checkbox` component:
+
+```tsx title="demo/Checkbox.tsx"
+import { Checkbox } from "@/components/ui/checkbox";
+
+export function CheckboxDemo() {
+  return (
+    <div className="flex items-center space-x-2">
+      <Checkbox id="terms" />
+      <label htmlFor="terms" className="text-sm font-medium leading-none cursor-pointer">
+        Accept terms and conditions
+      </label>
+    </div>
+  );
+}
+```

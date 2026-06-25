@@ -1,0 +1,53 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+---
+
+Built on top of `@radix-ui/react-avatar`.
+
+<ComponentPreview name="avatar" />
+
+---
+
+## Installation
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add avatar
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add avatar
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add avatar
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add avatar
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+
+## Usage Example
+
+```tsx title="demo/Avatar.tsx"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+export default function AvatarDemo() {
+  return (
+    <Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  );
+}
+```

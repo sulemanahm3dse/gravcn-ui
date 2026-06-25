@@ -1,0 +1,29 @@
+{
+  "title": "Components",
+  "pages": [
+    "index",
+    "app-shell",
+    "data-table",
+    "multi-select",
+    "accordion",
+    "alert",
+    "alert-dialog",
+    "avatar",
+    "badge",
+    "button",
+    "card",
+    "chart",
+    "checkbox",
+    "dialog",
+    "dropdown-menu",
+    "input",
+    "popover",
+    "sheet",
+    "skeleton",
+    "switch",
+    "table",
+    "tabs",
+    "textarea",
+    "tooltip"
+  ]
+}

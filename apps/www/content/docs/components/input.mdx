@@ -1,0 +1,52 @@
+---
+title: Input
+description: Renders a form input element styled to match the theme.
+---
+
+A basic input field component supporting custom placeholder text, sizing, styles, and state-specific borders.
+
+<ComponentPreview name="input" />
+
+---
+
+## Installation
+
+To add the `Input` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add input
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add input
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add input
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add input
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+
+## Usage Example
+
+Here is how you can render the `Input` component:
+
+```tsx title="demo/Input.tsx"
+import { Input } from "@/components/ui/input";
+
+export function InputDemo() {
+  return <Input type="email" placeholder="Email Address" />;
+}
+```

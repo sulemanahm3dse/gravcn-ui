@@ -1,0 +1,62 @@
+---
+title: Switch
+description: A control that allows the user to toggle between on and off states.
+---
+
+A switch toggle control built on top of Radix primitives, fully accessible and screen-reader friendly.
+
+<ComponentPreview name="switch" />
+
+---
+
+## Installation
+
+To add the `Switch` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add switch
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add switch
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add switch
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add switch
+    ```
+  </Tab>
+</Tabs>
+
+
+This will automatically pull in the following official Shadcn primitives as dependencies:
+*   `switch`
+
+---
+
+## Usage Example
+
+Here is how you can render the `Switch` component:
+
+```tsx title="demo/Switch.tsx"
+import { Switch } from "@/components/ui/switch";
+
+export function SwitchDemo() {
+  return (
+    <div className="flex items-center space-x-2">
+      <Switch id="airplane-mode" />
+      <label htmlFor="airplane-mode" className="text-sm font-medium cursor-pointer">
+        Airplane Mode
+      </label>
+    </div>
+  );
+}
+```

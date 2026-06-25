@@ -1,0 +1,93 @@
+---
+title: Multi Select
+description: A tag-based, keyboard-navigable popover multi-select dropdown.
+---
+
+A highly polished MultiSelect dropdown component. Selected options are rendered as dismissible badges inside the input field itself, with support for searching/filtering.
+
+<ComponentPreview name="multi-select" />
+
+---
+
+## Installation
+
+To add the `MultiSelect` to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```bash
+    npx @gravcn/cli add multi-select
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx @gravcn/cli add multi-select
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx @gravcn/cli add multi-select
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx @gravcn/cli add multi-select
+    ```
+  </Tab>
+</Tabs>
+
+
+This will automatically pull in the following official Shadcn primitives as dependencies:
+*   `badge`
+*   `command`
+*   `popover`
+*   `button`
+
+---
+
+## Usage Example
+
+Here is how you can render the `MultiSelect` component:
+
+```tsx title="demo/MultiSelect.tsx"
+import * as React from "react";
+import { MultiSelect, MultiSelectOption } from "@/components/multi-select/multi-select";
+import { User, Shield, CheckCircle } from "lucide-react";
+
+const options: MultiSelectOption[] = [
+  { label: "Admin Access", value: "admin", icon: Shield },
+  { label: "User Management", value: "users", icon: User },
+  { label: "Audit Logs", value: "audit", icon: CheckCircle },
+];
+
+export default function PermissionsForm() {
+  const [selected, setSelected] = React.useState<string[]>([]);
+
+  return (
+    <div className="w-full max-w-md space-y-4">
+      <label className="text-sm font-semibold">User Permissions</label>
+      <MultiSelect
+        options={options}
+        value={selected}
+        onChange={setSelected}
+        placeholder="Choose permissions..."
+      />
+      <p className="text-xs text-muted-foreground">
+        Selected values: {JSON.stringify(selected)}
+      </p>
+    </div>
+  );
+}
+```
+
+---
+
+## ⚙️ Properties (API)
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `options` | `MultiSelectOption[]` | *Required* | List of selection options containing `label`, `value`, and optional Lucide `icon`. |
+| `value` | `string[]` | *Required* | Array of selected option values. |
+| `onChange` | `(value: string[]) => void` | *Required* | Callback function triggered when selection changes. |
+| `placeholder` | `string` | `"Select options..."` | Input search placeholder text. |
+| `className` | `string` | `undefined` | Custom CSS styles for the combobox trigger button. |
