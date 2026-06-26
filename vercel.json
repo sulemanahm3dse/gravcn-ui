@@ -3,5 +3,10 @@
   "outputDirectory": "apps/www/.next",
   "installCommand": "pnpm install",
   "framework": "nextjs",
-  "devCommand": "pnpm --filter www dev"
+  "devCommand": "pnpm --filter www dev",
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+    }
+  }
 }
