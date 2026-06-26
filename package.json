@@ -2,6 +2,9 @@
   "name": "ui-library-monorepo",
   "private": true,
   "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "pnpm --filter www dev",
     "build": "pnpm --filter registry build && pnpm --filter cli build && pnpm --filter www build"
