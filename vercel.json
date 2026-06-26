@@ -2,7 +2,6 @@
   "buildCommand": "pnpm --filter registry build && pnpm --filter cli build && pnpm --filter www build",
   "outputDirectory": "apps/www/.next",
   "installCommand": "pnpm install",
-  "framework": "nextjs",
   "devCommand": "pnpm --filter www dev",
   "build": {
     "env": {
