@@ -1,7 +1,7 @@
 {
   "buildCommand": "pnpm --filter registry build && pnpm --filter cli build && pnpm --filter www build",
   "outputDirectory": "apps/www/.next",
-  "installCommand": "npm install -g pnpm@11.9.0 && pnpm install",
+  "installCommand": "corepack enable && corepack prepare pnpm@11.9.0 --activate && pnpm install",
   "framework": "nextjs",
   "devCommand": "pnpm --filter www dev"
 }
