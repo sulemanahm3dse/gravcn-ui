@@ -10,6 +10,7 @@
     "build": "pnpm --filter registry build && pnpm --filter cli build && pnpm --filter www build"
   },
   "devDependencies": {
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "next": "16.2.9"
   }
 }
