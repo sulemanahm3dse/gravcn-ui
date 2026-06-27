@@ -2,8 +2,10 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export function GET(request: Request, { params }: { params: { size: string } }) {
-  const size = parseInt(params.size) || 192;
+export function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const sizeParam = searchParams.get('size');
+  const size = parseInt(sizeParam || '192', 10);
   const iconSize = size * 0.6; // Scale down the SVG inside the square
 
   return new ImageResponse(
