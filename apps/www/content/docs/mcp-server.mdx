@@ -1,0 +1,99 @@
+---
+title: MCP Server
+description: Use the GravCN MCP server to browse, search, and install components from registries.
+---
+
+The GravCN MCP Server allows AI assistants to interact with items from your registries. You can browse available components, search for specific ones, and install them directly into your project using natural language.
+
+For example, you can ask an AI assistant to *"Build a landing page using components from the gravcn registry"* or *"Find me a multi-select form from the gravcn registry"*.
+
+## What is MCP?
+
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open protocol that enables AI assistants to securely connect to external data sources and tools. With the GravCN MCP server, your AI assistant gains direct access to:
+- **Browse Components** - List all available components, blocks, and templates.
+- **Search Across Registries** - Find specific components by name or functionality.
+- **Install with Natural Language** - Add components using simple conversational prompts like "add a login form".
+
+## Quick Start
+
+You can automatically configure the GravCN MCP server for your preferred AI editor (Cursor, Claude Code, or VS Code) using the GravCN CLI. 
+
+Run the following command in your project and follow the interactive prompts:
+
+```bash
+npx @gravcn/ui@latest mcp init
+```
+
+Alternatively, you can bypass the prompt by specifying the client directly:
+
+```bash
+npx @gravcn/ui@latest mcp init --client cursor
+```
+
+## Manual Configuration
+
+You can use any MCP client to interact with the GravCN MCP server. Here are the instructions for the most popular ones.
+
+### Claude Code
+
+To use the GravCN MCP server with Claude Code, add the following configuration to your project's `.mcp.json` file:
+
+```json title=".mcp.json"
+{
+  "mcpServers": {
+    "gravcn": {
+      "command": "npx",
+      "args": ["@gravcn/ui@latest", "mcp"]
+    }
+  }
+}
+```
+
+After adding the configuration, restart Claude Code and run `/mcp` to see the GravCN MCP server in the list.
+
+### Cursor
+
+To configure MCP in Cursor, add the GravCN server to your project's `.cursor/mcp.json` configuration file, or add it via Cursor Settings -> Features -> MCP Servers:
+
+```json title=".cursor/mcp.json"
+{
+  "mcpServers": {
+    "gravcn": {
+      "command": "npx",
+      "args": ["@gravcn/ui@latest", "mcp"]
+    }
+  }
+}
+```
+
+Once enabled, you should see a green dot next to the GravCN server in the MCP server list and a list of available tools.
+
+### VS Code
+
+To configure MCP in VS Code with GitHub Copilot, add the GravCN server to your project's `.vscode/mcp.json` configuration file:
+
+```json title=".vscode/mcp.json"
+{
+  "servers": {
+    "gravcn": {
+      "command": "npx",
+      "args": ["@gravcn/ui@latest", "mcp"]
+    }
+  }
+}
+```
+
+After adding the configuration, open `.vscode/mcp.json` and click Start next to the gravcn server.
+
+## Example Prompts
+
+Once the MCP server is configured, you can use natural language to interact with your UI registry. Try one of the following prompts:
+
+### Browse & Search
+- Show me all available components in the gravcn registry
+- Find me a multi-select component from the gravcn registry
+
+### Install Items
+- Add the button component to my project
+- Create a login form using gravcn components
+- Install the navigation menu from the gravcn registry
