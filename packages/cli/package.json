@@ -1,9 +1,10 @@
 {
-  "name": "gravcn-ui-cli",
-  "version": "0.1.0",
+  "name": "@gravcn/ui",
+  "version": "0.1.1",
+  "description": "CLI to add gravcn UI components to your project",
   "type": "module",
   "bin": {
-    "ui-library": "./dist/index.js"
+    "gravcn-ui": "./dist/index.js"
   },
   "files": [
     "dist"
@@ -24,5 +25,15 @@
     "@types/node": "^22.0.0",
     "tsup": "^8.3.6",
     "typescript": "^5.4.5"
-  }
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "cli",
+    "gravcn"
+  ]
 }
